@@ -37,5 +37,7 @@ frame_2.grid(row=1,column=0)
 help=tkinter.Label(frame_2,text="help")
 help.grid(row=0,column=0,pady=10,padx=100)
 help.bind("<Button-1>")
+
+
 window.mainloop()
 
