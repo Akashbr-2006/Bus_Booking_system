@@ -7,13 +7,13 @@ def update_seat(seat_no):
 
 
 
-
 img=tkinter.PhotoImage(file="A:\\program\\Practice\\img.png")
+
 window.title("Bus seat selecter")
 fram=tkinter.Frame(window)
 fram.pack()
 bus_info=tkinter.Label(fram,text="Bus name:VRl\nBus number:KA13NB2869\n",)
-bus_info.grid(column=0,row=0)
+bus_info.grid(column=0,row=0,sticky="e")
 bus_seat_grid=tkinter.LabelFrame(fram,text="Select the seat")
 bus_seat_grid.grid(column=0,row=1)
 
