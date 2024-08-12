@@ -19,12 +19,14 @@ Cursor=Connection.cursor()
 
 window=tkinter.Tk()
 window.title("XYZ Bus booking")
+window.geometry("600x600")
+window.configure(background="#21201c")
 
-login_interface=tkinter.Frame(window)
-login_interface.pack(expand=True, fill='both')
+login_interface=tkinter.Frame(window,background="#21201c")
+login_interface.place(relx=0.5, rely=0.5, anchor="center",relwidth=0.8,relheight=1.0)
 
 frame_1=tkinter.LabelFrame(login_interface,background="#21201c")
-frame_1.grid(row=0,column=0)
+frame_1.place(relx=0.5, rely=0.4, anchor="center",relwidth=0.6,relheight=0.4)
 
 #login_frame
 
@@ -43,17 +45,20 @@ user_pass_entry.grid(column=0,row=3,sticky="w")
 login_button=tkinter.Button(frame_1,text="login",command=None,background= "#8AAB1D",foreground="white",font=6)
 login_button.grid(row=4,column=0,pady=10)
 
-help_frame=tkinter.LabelFrame(login_interface,text="Help",background="#21201c",foreground="white")
-help_frame.grid(row=1,column=0)
 
-forget_password=tkinter.Label(help_frame,text="forget password",background="#21201c",foreground="white",underline=True,font=("Arial",12,"underline"))
+#help_frame
+help_frame=tkinter.LabelFrame(login_interface,background="#21201c",foreground="white",width=200, height=100)
+help_frame.place(relx=0.5, rely=0.7, anchor="center",relheight=0.12,relwidth=0.6)
+
+forget_password=tkinter.Label(help_frame,text="forget password",background="#21201c",foreground="#2759e3",font=("Arial",12,"underline"))
 forget_password.grid(row=0,column=0)
-help=tkinter.Label(help_frame,text="help",background="#21201c",foreground="white",font=("Arial",12,"underline"))
-help.grid(row=1,column=0,pady=10,padx=100)
+help=tkinter.Label(help_frame,text="help",background="#21201c",foreground="#2759e3",font=("Arial",12,"underline"))
+help.grid(row=1,column=0,pady=10,padx=122)
 help.bind("<Button-1>")
+window.grid_rowconfigure(0, weight=1)
+window.grid_columnconfigure(0, weight=1)
 
 
 #sign_in frame
-
 
 window.mainloop()
