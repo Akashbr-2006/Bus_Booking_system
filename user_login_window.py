@@ -1,20 +1,40 @@
 import pymysql
 import tkinter
+from tkinter import messagebox
 
+def error_windo(msg):
+    messagebox.showerror("error 303",msg)
+
+
+def check():
+    ented_user_id=userid_entry.get()
+    user_pass_entry=login_pass_entry.get()
+    query="select * from booking_system.user_info where user_id='"+ented_user_id+"';"
+    Cursor.execute(query)
+    user_info=Cursor.fetchall()
+    if user_info==():
+        error_windo("user not found ")
+    elif user_info[0][1]==user_pass_entry and user_info[0][0]==ented_user_id:
+        print("loged in")
+        #command to call the bus search windo is not written
+    elif user_info[0][1]!=user_pass_entry or user_info[0][0]!=ented_user_id: 
+            error_windo("wronge password please try agian")
 
 #sql connection
 
-Connection=pymysql.connect(host='localhost',
+def mysql():
+     Connection=pymysql.connect(host='localhost',
                            user='root',
                            password='1#nmnmnm1#',
                            database='booking_system'
                            )
-Cursor=Connection.cursor()
-#Cursor.execute("SELECT * FROM user_info;")
-#print(Cursor.fetchall())
+     Cursor=Connection.cursor()
+     return Cursor
+Cursor=mysql()
 
 
 #user login interface
+
 
 
 window=tkinter.Tk()
@@ -36,13 +56,13 @@ user_id.grid(column=0,row=0,sticky="w",pady=(7,0))
 userid_entry=tkinter.Entry(frame_1,background="black",width=25,font=3,foreground="white")
 userid_entry.grid(column=0,row=1,sticky="w")
 
-user_pass=tkinter.Label(frame_1,text="Password",background="#21201c",fg="white",font=6)
-user_pass.grid(row=2,column=0,sticky="w",pady=(7,0))
+login_pass=tkinter.Label(frame_1,text="Password",background="#21201c",fg="white",font=6)
+login_pass.grid(row=2,column=0,sticky="w",pady=(7,0))
 
-user_pass_entry=tkinter.Entry(frame_1,background="black",foreground="white",width=25,font=4)
-user_pass_entry.grid(column=0,row=3,sticky="w")
+login_pass_entry=tkinter.Entry(frame_1,background="black",foreground="white",width=25,font=4)
+login_pass_entry.grid(column=0,row=3,sticky="w")
 
-login_button=tkinter.Button(frame_1,text="login",command=None,background= "#8AAB1D",foreground="white",font=6)
+login_button=tkinter.Button(frame_1,text="login",command=check,background= "#8AAB1D",foreground="white",font=6)
 login_button.grid(row=4,column=0,pady=10)
 
 
