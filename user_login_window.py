@@ -21,9 +21,9 @@ def check():
             error_windo("wronge password please try agian")
 
 def sign_in_page():
+     window.destroy()
      window2=tkinter.Tk()
-     frame=tkinter.Label(window2)
-     frame.pack()
+     window2.configure(background="#21201c")
      new_account_frame=tkinter.LabelFrame(window2,background="#21201c")
      new_account_frame.pack(anchor="center")
 
