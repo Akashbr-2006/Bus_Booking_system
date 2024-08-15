@@ -7,7 +7,7 @@ window.geometry("600x417")
 window.configure(background="#21201c")
 
 
-image=tkinter.PhotoImage(file="A:\\get-hub\\Bus_Booking_system\\img.png")
+image=tkinter.PhotoImage(file="A:\\get-hub\\Bus_Booking_system\\Bg_image\\img.png")
 imagee=tkinter.Label(window,image=image)
 imagee.place(relheight=1.0,relwidth=1.0)
 frame=tkinter.Frame(window)

@@ -12,11 +12,12 @@ def sql():
                            database='booking_system'
                            ).cursor()
     return Cursor
+cursor=sql()
 def update_seat(seat_no,button):
     if seat_no not in seat_selected:
         seat_selected.append(seat_no)
         button.config(bg="green") 
-
+        cursor.execute("INSERT INTO `booking_system`.`seat_info` (`seat_no`) VALUES ('"+seat_no+"');")
     else:
         seat_selected.remove(seat_no)
         button.config(bg="SystemButtonFace")
@@ -32,7 +33,6 @@ def create_seat_button(row, col, seat_no):
         x=0
     button.grid(row=row, column=col, padx=(x, 0))
     return button
-cursor=sql()
 def get_reserved_data():
     cursor.execute("SELECT * FROM booking_system.seat_info;")
     reserved_data=cursor.fetchall()
@@ -41,7 +41,8 @@ def get_reserved_data():
             seat_selected.append(no)
     
 get_reserved_data()
-img=tkinter.PhotoImage(file="A:\\program\\Practice\\img.png")
+
+img=tkinter.PhotoImage(file="A:\\get-hub\\Bus_Booking_system\\Bg_image\\seat.png")
 
 window.title("Bus seat selecter")
 window.geometry("600x600")
