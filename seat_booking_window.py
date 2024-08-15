@@ -49,19 +49,18 @@ window.geometry("600x600")
 fram=tkinter.Frame(window)
 fram.pack()
 
-dest=""
+dest="" 
 bus_info=tkinter.Label(fram,text='Bus name:VRl\nBus number:KA13NB2869\nBus destation:'+dest+'\n ')
 bus_info.grid(column=0,row=0,sticky="e")
 bus_seat_grid=tkinter.LabelFrame(fram,text="Select the seat")
 bus_seat_grid.grid(column=0,row=1)
 
-
+#seat_index
 
 no0=tkinter.Label(bus_seat_grid).grid(row=0,column=0)
 no1=tkinter.Label(bus_seat_grid,text="1").grid(row=1,column=0)
 no2=tkinter.Label(bus_seat_grid,text="2").grid(row=2,column=0)
 no3=tkinter.Label(bus_seat_grid,text="3").grid(row=3,column=0)
-
 a=tkinter.Label(bus_seat_grid,text="A").grid(row=0,column=1)
 b=tkinter.Label(bus_seat_grid,text="B").grid(row=0,column=2)
 c=tkinter.Label(bus_seat_grid,text="C").grid(row=0,column=3,padx=(20,0))
