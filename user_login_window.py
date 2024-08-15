@@ -81,12 +81,15 @@ window=tkinter.Tk()
 window.title("XYZ Bus booking")
 window.geometry("600x600")
 window.configure(background="#21201c")
+image=tkinter.PhotoImage(file="A:\\get-hub\\Bus_Booking_system\\img.png")
+imagee=tkinter.Label(window,image=image)
+imagee.place(relheight=1.0,relwidth=1.0)
 
 login_interface=tkinter.Frame(window,background="#21201c")
-login_interface.place(relx=0.5, rely=0.5, anchor="center",relwidth=0.8,relheight=1.0)
+login_interface.place(relx=0.5, rely=0.5, anchor="center",relwidth=0.8,relheight=0.8)
 
 frame_1=tkinter.LabelFrame(login_interface,background="#21201c")
-frame_1.place(relx=0.5, rely=0.4, anchor="center",relwidth=0.6,relheight=0.4)
+frame_1.place(relx=0.5, rely=0.4, anchor="center",relwidth=0.7,relheight=0.5)
 
 #login_frame
 
@@ -109,13 +112,14 @@ create_account_opt.grid(row=5,column=0,sticky="n",pady=10,ipadx=10)
 
 #help_frame
 help_frame=tkinter.LabelFrame(login_interface,background="#21201c",foreground="white",width=200, height=100)
-help_frame.place(relx=0.5, rely=0.7, anchor="center",relheight=0.12,relwidth=0.6)
+help_frame.place(relx=0.5, rely=0.8, anchor="center",relheight=0.13,relwidth=0.6)
 
 forget_password=tkinter.Label(help_frame,text="forget password",background="#21201c",foreground="#2759e3",font=("Arial",12,"underline"))
 forget_password.grid(row=0,column=0)
 help=tkinter.Label(help_frame,text="help",background="#21201c",foreground="#2759e3",font=("Arial",12,"underline"))
 help.grid(row=1,column=0,pady=10,padx=122)
 help.bind("<Button-1>")
+not_create_account=tkinter.Label(text="contuine without login")
 #window.grid_rowconfigure(0, weight=1)
 #window.grid_columnconfigure(0, weight=1)
 

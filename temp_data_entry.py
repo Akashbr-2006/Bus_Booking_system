@@ -1,11 +1,10 @@
 import pymysql
 
-Connection=pymysql.connect(host='localhost',
+Cursor=pymysql.connect(host='localhost',
                            user='root',
                            password='1#nmnmnm1#',
                            database='booking_system'
-                           )
-Cursor=Connection.cursor()
+                           ).cursor()
 dob="11/22/33"
 user_id="akash"
 user_pass="pass"
